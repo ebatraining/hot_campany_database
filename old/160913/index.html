@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="企業情報,注目企業,まとめ情報">
+<meta name="description" content="当サイトでは今熱い注目企業の情報をまとめてご紹介しています。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title>HOT COMPANY DATABASE</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sp.css">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/loading.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/jquery.scrollTo.js"></script>
+<script>
+$(document).ready(function(){
+
+	// hide #back-top first
+	$("#back-top").hide();
+
+	// fade in #back-top
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		$('#back-top a').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+$(function(){
+    $(window).bind("scroll", function() {
+    // ドキュメントの高さ
+    scrollHeight = $(document).height();
+    // ウィンドウの高さ+スクロールした高さ→ 現在のトップからの位置
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    // フッターの高さ
+    footHeight = $("footer").height();
+
+    // スクロール位置がフッターまで来たら
+    if ( scrollHeight - scrollPosition  <= footHeight ) {
+        // ページトップリンクをフッターに固定
+        $("#back-top a").css({"position":"absolute","bottom": "13vh"});
+    } else {
+        // ページトップリンクを右下に固定
+        $("#back-top a").css({"position":"fixed","bottom": "13vh"});
+        }
+    });
+});
+</script>
+<script>
+$(document).ready(function() {
+	$('#nav').onePageNav();
+});
+</script>
+<!-------ページ最上部の時は非表示(side navi)------->
+<script>
+$(function() {
+    var topBtn = $('#nav');    
+    topBtn.hide();
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+});
+</script>
+<!--<script>
+$(function() {
+    var topBtn = $('#nav');    
+    topBtn.hide();
+	
+    $(window).scroll(function () {
+		// ウィンドウの縦幅を取得します。
+    var windowHeight = $(this).height();
+        if ($(this).scrollTop() >= windowHeight) {
+			    //// ウィンドウの縦幅以上にスクロールしていた場合、ボタン表示
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+    
+});
+</script>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function() {
+
+
+	// ----------------------------------------------------
+	// navカレント表示
+	// ----------------------------------------------------
+
+	var box = new Array;
+	var current = -1;
+	$(".box").each(function(i) {
+		box[i] = $(this).offset().top;
+	});
+	
+	// カレント表示の変更
+	function changeBox(secNum) {
+		if (secNum != current) {
+			current = secNum;
+			secNum2 = secNum + 1;
+			$("#side-navi li a").removeClass("current");
+			$("#side-navi li:nth-child(" + secNum2 +") a").addClass('current');
+		}
+	};
+
+	// scroll量での判定
+	function scrollCheck() {
+		st = $(window).scrollTop()+30;
+		for (var i = box.length - 1 ; i >= 0; i--) {
+			if (st > box[i]) {
+				changeBox(i);
+				break;
+			}
+		};
+	}
+	
+	// scrollでのカレント表示をon
+	$(window).on("load scroll", scrollCheck);
+
+
+	// ----------------------------------------------------
+	// スムーススクロール
+	// ----------------------------------------------------
+
+	// ua判定
+	var userAgent = window.navigator.userAgent.toLowerCase();
+	var webkit = userAgent.indexOf("safari") > -1;
+
+	$("#side-navi a").click( function() {
+
+		// scrollでのカレント表示を無効にする
+		$(window).off("load scroll", scrollCheck);
+
+		// カレントclassを変更
+		$("#side-navi li a").removeClass("current");
+		$(this).addClass("current");
+
+		// スクロール処理
+		var target = $(this).attr("href");
+		var targetTop = $(target).offset().top;
+		$(webkit ? 'body' : 'html').animate({scrollTop: targetTop}, function() {
+
+			// scrollでのカレント表示を再度有効にする
+			$(window).on("load scroll", scrollCheck);
+
+		});
+		
+		return false;
+	});				
+
+
+});
+</script>-->
+
+</head>
+<body id="hoge">
+	<div id="loader-bg">
+      <div id="loader">
+        <img src="images/loading.gif" width="200" height="200" alt="Now Loading..." />
+        <p>Now Loading...</p>
+      </div>
+    </div>
+    <div id="wrapper">
+        <header id="top_pc">
+            <div class="header_lr">
+            <h1 class="header_l"><span class="hot">Hot</span><br>Company<br>Database</h1>
+            <nav class="header_r">
+                <ul>
+                    <li><a href="#first_m"><img src="images/btn01.png" alt="IT企業"></a></li>
+                    <li><a href="#second_m"><img src="images/btn02.png" alt="レンタル事業"></a></li>
+                    <li><a href="#third_m"><img src="images/btn03.png" alt="学習"></a></li>
+                    <li><a href="#fourth_m"><img src="images/btn04.png" alt="ファッション"></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#fifth_m"><img src="images/btn05.png" alt="建設・インテリア"></a></li>
+                    <li><a href="#sixth_m"><img src="images/btn06.png" alt="ゲーム"></a></li>
+                    <li><a href="#seventh_m"><img src="images/btn07.png" alt="冠婚葬祭"></a></li>
+                    <li><a href="#eighth_m"><img src="images/btn08.png" alt="グルメ"></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#nineth_m"><img src="images/btn09.png" alt="レジャー"></a></li>
+                    <li><a href="#tenth_m"><img src="images/btn10.png" alt="健康・医療"></a></li>
+                    <li><a href="#erevventh_m"><img src="images/btn11.png" alt="コスメ"></a></li>
+                    <li><a href="#twelfth_m"><img src="images/btn12.png" alt="情報関連"></a></li>
+                </ul>
+            </nav>
+            <span id="mouse"></span>
+            </div>
+        </header>
+        
+        <div id="top_sp">
+        	<h1><img src="images/main_image_sp.jpg" alt="hot company database"></h1>
+        </div>
+
+　　　　 <!-- サイドナビ -->
+        <!--<nav>
+        <ul id="side-navi">
+　　　　	<li><a href="#first_m"><i class="fa fa-circle" aria-hidden="true" alt="IT企業"></i></a></li>
+            <li><a href="#second_m"><i class="fa fa-circle" aria-hidden="true" alt="レンタル事業"></i></a></li>
+            <li><a href="#third_m"><i class="fa fa-circle" aria-hidden="true" alt="学習"></i></a></li>
+        	<li><a href="#fourth_m"><i class="fa fa-circle" aria-hidden="true" alt="ファッション"></i></a></li>
+            <li><a href="#fifth_m"><i class="fa fa-circle" aria-hidden="true" alt="建設・インテリア"></i></a></li>
+            <li><a href="#sns"><i class="fa fa-circle" aria-hidden="true" alt="ナビゲーション"></i></a></li>
+        </ul>
+        </nav>-->
+        <ul id="nav">
+        	<li class="current"><a href="#first_m"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
+            <li><a href="#second_m"><i class="fa fa-leaf" aria-hidden="true"></i></a></li>
+            <li><a href="#third_m"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+            <li><a href="#fourth_m"><i class="fa fa-diamond" aria-hidden="true"></i></a></li>
+            <li><a href="#fifth_m"><i class="fa fa-gavel" aria-hidden="true"></i></a></li>
+        </ul>
+
+        <section id="first">
+        	<div  class="contents01" id="first_m">
+            	<h1><img src="images/contents01_title.png" alt="IT企業"></h1>
+            	<div class="contents01_inner">
+                    <span>SEO対策、webサイト制作の企業</span>
+                    <h2><a href="http://ebacorp.jp/">EBA株式会社</a></h2>
+                    <p class="contents01_text_box">
+                    SEO対策、webサイト制作を行っている企業です。個人のブログサイトから企業のwebサイトまで、幅広く対応しています。SES事業にも力を入れている急成長の注目企業です。
+                    </p>
+                    <div class="contents01_inner_l_img">
+                    <a href="http://ebacorp.jp/">
+                        <img src="images/eba.jpg" alt="EBAホームページ">
+                    </a>
+                    </div>
+										<div class="contents01_inner_r_img">
+                    <a href="http://ebacorp.jp/">
+                        <img src="images/eba02.jpg" alt="PC">
+                    </a>
+                    </div>
+                    <table>
+                        	<tbody>
+                            <h3>運営サイト</h3>
+                            <tr>
+                            <td><a href="http://ebacorp.jp/">EBA株式会社</a></td>
+                            <td>情報発信</td>
+                            <td>総合ランキングサイト</td>
+                            <td>ADooPi</td>
+                            <td>勝手に口コミ紹介</td>
+                            </tr>
+                            <tr>
+                            <td>会社紹介.com</td>
+                            <td>お客様の声.net</td>
+                            <td>思わず紹介.com</td>
+                            <td>紹介ブログ</td>
+                            </tr>
+                            <tr>
+                            <td>サイト紹介.com</td>
+                            <td>Goodサイト</td>
+                            <td>HOT COMPANY DATABASE</td>
+                            </tr>
+                            </tbody>
+                    </table>
+                    <div class="contents01_inner_info">
+                        <ul>
+                            <li>HP&nbsp;&hellip;&nbsp;<a href="http://ebacorp.jp/">http://ebacorp.jp/</a></li>
+                            <li>tel&nbsp;&hellip;&nbsp;03-5778-4829</li>
+                            <li>address&nbsp;&hellip;&nbsp;東京都新宿区西新宿6丁目12番7号ストーク新宿1F</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="second">
+        	<div class="contents02" id="second_m">
+            	<h1><img src="images/contents02_title.png" alt="レンタル事業"></h1>
+            	<div class="contents02_inner">
+                	<div class="contents02_inner_l">
+                        <span>レンタル事業の企業</span>
+                        <h2><a href="http://www.creed-greenrental.com/">有限会社クリード</a></h2>
+                        <p class="contents02_text_box">
+                        神奈川県中心に植物のレンタルを行っています。1鉢から対応しており、レンタルの他にも水やり、植物の病気等も月に1度点検するなどのサービスも行っています。
+                        </p>
+                        <div class="contents02_inner_l_img">
+                        <a href="http://www.creed-greenrental.com/">
+                    		<img src="images/creed.jpg" alt="クリード">
+                        </a>
+                        </div>
+                        <div class="contents02_inner_l_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://www.creed-greenrental.com/">http://www.creed-greenrental.com/</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;042-786-1431</li>
+                                <li>mail&nbsp;&hellip;&nbsp;info@creed-greenrental.com</li>
+                                <li>address&nbsp;&hellip;&nbsp;神奈川県相模原市中央区横山台1-46-6</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contents02_inner_r">
+                    	<span>&nbsp;</span>
+                        <h2><a href="http://www.rental-o.com/">アスノシステム</a></h2>
+                        <p class="contents02_text_box">
+                        東京・大阪をはじめ全国のレンタルオフィス、シェアオフィス、バーチャルオフィス等を検索出来るポータルサイトです。現在250物件、1300オフィス以上が登録されております。レンタルオフィス・理想のオフィスを当サイトを利用してお探しください！！
+                        </p>
+                        <div class="contents02_inner_r_img">
+                        <a href="http://www.rental-o.com/">
+                    		<img src="images/asuno.jpg" alt="アスノシステム">
+                        </a>
+                        </div>
+                        <div class="contents02_inner_r_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://www.rental-o.com/">http://www.rental-o.com/</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;03-5798-7780</li>
+                                <li>mail&nbsp;&hellip;&nbsp;saiyou.system@asno-sys.co.jp</li>
+                                <li>address&nbsp;&hellip;&nbsp;東京都港区高輪二丁目16番37号 オーク高輪第2ビル２階</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="third">
+        	<div class="contents03" id="third_m">
+            	<h1><img src="images/contents03_title.png" alt="学習"></h1>
+            	<div class="contents03_inner">
+                    <span>学習関連の企業</span>
+                    <h2><a href="http://manten100.com/">家庭教師の満点</a></h2>
+                    <p class="contents03_text_box">
+                    良質なマンツーマン指導でやる気を引き出し、確かな指導力で成績アップ！家庭教師のwebサイトです。中学～大学受験まで安心サポートしています。
+                    </p>
+                    <div class="contents03_inner_img">
+                    <a href="http://manten100.com/">
+                        <img src="images/manten.jpg" alt="家庭教師の満点">
+                    </a>
+                    </div>
+                    <div class="contents03_inner_info">
+                        <ul>
+                            <li>HP&nbsp;&hellip;&nbsp;<a href="http://manten100.com/">http://manten100.com/</a></li>
+                            <li>tel&nbsp;&hellip;&nbsp;025-266-2477</li>
+                            <li>mail&nbsp;&hellip;&nbsp;http://manten100.com/lesson.php</li>
+                            <li>address&nbsp;&hellip;&nbsp;新潟県新潟市中央区信濃町21-9-202</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fourth">
+        	<div class="contents04" id="fourth_m">
+            	<h1><img src="images/contents04_title.png" alt="ファッション"></h1>
+            	<div class="contents04_inner">
+                	<div class="contents04_inner_l">
+                        <span>アクセサリー販売の企業</span>
+                        <h2><a href="http://misumi.jp.net/">MISUMI</a></h2>
+                        <p class="contents04_text_box">
+                        パワーストーン・ブレスレットを中心とした、天然石・アクセサリーブランド。2万円以上送料無料、コンビニ決済可。
+                        </p>
+                        <div class="contents04_inner_l_img">
+                        <a href="http://misumi.jp.net/">
+                    		<img src="images/misumi.jpg" alt="MISUMI">
+                        </a>
+                        </div>
+                        <div class="contents04_inner_l_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://misumi.jp.net/">http://misumi.jp.net/</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;03-6806-1452</li>
+                                <li>mail&nbsp;&hellip;&nbsp;shop@misumi.jp.net</li>
+                                <li>address&nbsp;&hellip;&nbsp;東京都足立区千住3-6ツオード千住壱番館6F</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contents04_inner_r">
+                    	<span>&nbsp;</span>
+                        <h2><a href="http://accessory-ranking.com">アクセサリーランキング</a></h2>
+                        <p class="contents04_text_box">
+                        古いデザインはさよなら！新しいデザインのパワーストーンランク１０。パワーストーン・ブレスレットを中心とした、天然石・アクセサリーブランド。2万円以上送料無料、コンビニ決済可。
+                        </p>
+                        <div class="contents04_inner_r_img">
+                        <a href="http://accessory-ranking.com">
+                    		<img src="images/a_ranking.jpg" alt="アクセサリーランキング">
+                        </a>
+                        </div>
+                        <div class="contents04_inner_r_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://accessory-ranking.com">http://accessory-ranking.com</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;03-6806-1452</li>
+                                <li>mail&nbsp;&hellip;&nbsp;shop@misumi.jp.net</li>
+                                <li>address&nbsp;&hellip;&nbsp;東京都足立区千住3-6ツオード千住壱番館6F</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="fifth">
+        	<div class="contents05" id="fifth_m">
+            	<h1><img src="images/contents05_title.png" alt="建設・インテリア"></h1>
+            	<div class="contents05_inner">
+                	<div class="contents05_inner_l">
+                        <span>建設・インテリア系の企業</span>
+                        <h2><a href="http://kensetsu.kyokadaikou.com/">キョカちゃん代行</a></h2>
+                        <p class="contents05_text_box">
+                        全国の建設業許可取得の書類作成代行や申請代行(建設業許可代行)を行うだけではなく、将来の成長・繁栄を応援できるよう建設業についてコンサルティングも可能な行政書士が集結した代行サービスです。
+                        </p>
+                        <div class="contents05_inner_l_img">
+                        <a href="http://kensetsu.kyokadaikou.com/">
+                    		<img src="images/kyoka.jpg" alt="キョカちゃん代行">
+                        </a>
+                        </div>
+                        <div class="contents05_inner_l_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://kensetsu.kyokadaikou.com/">http://kensetsu.kyokadaikou.com/</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;0120-223151</li>
+                                <li>mail&nbsp;&hellip;&nbsp;info@kyokadaikou.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contents05_inner_r">
+                    	<span>&nbsp;</span>
+                        <h2><a href="http://catarina.rh.shopserve.jp/lpcasaines/">輸入雑貨 カーサイネス</a></h2>
+                        <p class="contents05_text_box">
+                        ホワイト＆エレガントなインテリアでくつろぎに満ちたお部屋作りを。大人な女性向きな輸入インテリア雑貨を多数取り扱っています。
+                        </p>
+                        <div class="contents05_inner_r_img">
+                        <a href="http://catarina.rh.shopserve.jp/lpcasaines/">
+                    		<img src="images/ci.jpg" alt="カーサイネス">
+                        </a>
+                        </div>
+                        <div class="contents05_inner_r_info">
+                    		<ul>
+                            	<li>HP&nbsp;&hellip;&nbsp;<a href="http://catarina.rh.shopserve.jp/lpcasaines/">http://catarina.rh.shopserve.jp/lpcasaines/</a></li>
+                                <li>tel&nbsp;&hellip;&nbsp;0267-41-0059</li>
+                                <li>address&nbsp;&hellip;&nbsp;長野県北佐久郡軽井沢町大字発地1408-8</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p id="back-top">
+        <a href="#"><img src="images/back-top.png" alt="ＴＯＰへ戻る"></a>
+    	</p>
+        <footer>
+            <div class="contents06" id="sns">
+            	<ul>
+                	<li>
+                    	<a href="" class="fa fa-twitter-square"></a>
+                    </li>
+                    <li>
+                    	<a href="" class="fa fa-facebook-square"></a>
+                    </li>
+                    <li>
+                    	<a herf="" class="fa fa-google-plus-square"></a>
+                    </li>
+                </ul>
+            </div>
+            <small>Copyright&nbsp;&copy;&nbsp;HCD</small>
+        </footer>
+    </div>
+</body>
+</html>
