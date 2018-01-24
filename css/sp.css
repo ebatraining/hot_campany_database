@@ -1,5 +1,10 @@
 /* スマホ向けCSS */
 @media screen and (max-width:767px) {
+    
+html{
+	font-size:2.5vw;
+}
+    
 #wrapper{
 	width:100%;
 	height:100%;
@@ -36,7 +41,7 @@
 	background:rgba(0,0,0,.6);
 	width:100%;
 	height:96%;
-	padding:5% 0 7%;
+	padding:43% 0 7%;
 }
 
 .contents01 h1{
@@ -124,7 +129,7 @@
 .contents01_inner_youtube iframe{
 	width:90%;
 	margin:0 auto;
-	border-raidus:10px;
+	border-radius:10px;
 }
 
 .contents01_inner_info{
@@ -747,6 +752,8 @@
 }
     
 
+/* コスメ */
+
 #eight{
 	background:url(../images/contents08_gb.jpg) no-repeat 50% 0 fixed;
     background-size: cover;
@@ -836,6 +843,96 @@
 	word-break:break-all;
 }
 
+/* 健康 */
+
+#nine{
+    background: url("../images/contents09_bg.jpg") no-repeat 50% 0 fixed;
+    min-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10% 0;
+}
+
+.contents09{
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 95%;
+    padding: 5% 0 7%;
+}
+
+.contents09 h1{
+    padding: 2% 0 2% 2%;
+}
+
+.contents09 h1 img{
+    width: 70%;
+}
+
+.contents09_inner{
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    color: #FFFFFF;
+    width: 86%;
+    margin: 0 auto;
+    padding: 3%;
+    
+}
+
+.contents09_inner_l,
+.contents09_inner_r{
+    display: block;
+    margin: 2em auto;
+}
+
+.contents09_inner span{
+    height: 2em;
+}
+
+.contents09_inner_l h2,
+.contents09_inner_r h2{
+    font-size: 25px;
+    padding:1% !important;
+}
+
+.contents09_text_l_box,
+.contents09_text_r_box{
+    padding-top: 1em;
+    font-size: 85%;
+    line-height: 1.5;
+}
+
+.contents09_inner_l_img,
+.contents09_inner_r_img{
+    text-align: center;
+    margin: 5% 0;
+}
+
+.contents09_inner_l_img img,
+.contents09_inner_r_img img{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.contents09_inner_l_info,
+.contents09_inner_r_info{
+    margin-top: 5%;
+}
+
+.contents09_inner_l_info ul,
+.contents09_inner_r_info ul{
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    list-style: none;
+    padding: 2% 5%;
+}
+
+.contents09_inner_l_info li,
+.contents09_inner_r_info li{
+    font-size: 87%;
+    word-break: break-all;
+    padding: 0.5em;
+}
 
 /* footer */
 
@@ -953,6 +1050,10 @@ footer small{
 #nav i{
 	padding:5.5px;
 	font-size:70%;
+}
+
+#humanicon{
+    padding: 6.5px !important;
 }
 
 .current i{
