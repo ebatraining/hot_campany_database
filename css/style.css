@@ -1197,14 +1197,11 @@ footer small{
 	-moz-border-radius: 50%;
 	background:rgba(20,51,66,.9);
 	margin:0.8em 0;
-}
-
-#humanicon{
-    padding: 6.2px 8.9px !important;
+	text-align: center;
 }
 
 #nav i{
-	padding:6.2px 6.8px;
+	padding:6.2px 0;
 }
 
 .current i{

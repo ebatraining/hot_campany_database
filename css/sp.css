@@ -1045,15 +1045,12 @@ footer small{
 	-moz-border-radius: 50%;
 	background:rgba(20,51,66,.9);
 	margin:0.5em 0;
+	text-align: center;
 }
 
 #nav i{
-	padding:5.5px;
+	padding:5.5px 0;
 	font-size:70%;
-}
-
-#humanicon{
-    padding: 6.5px !important;
 }
 
 .current i{
